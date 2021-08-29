@@ -1,0 +1,33 @@
+#!/bin/bash
+
+cd /tmp/rom
+
+repo init -q --no-repo-verify --depth=1 -u https://github.com/NusantaraProject-ROM/android_manifest -b 11 -g default,-device,-mips,-darwin,-notdefault
+repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
+
+# DT/VT/KT
+git clone https://github.com/MiBengal-Development/Device_xiaomi_J --single-branch -b Trying device/xiaomi/juice
+cd /tmp/rom/device/xiaomi/juice
+git revert HEAD^
+cd /tmp/rom
+git clone --depth=1 https://github.com/I-n-o-k/vendor_xiaomi_juice --single-branch -b 11 vendor/xiaomi/juice
+git clone --depth=1 https://github.com/I-n-o-k/android_kernel_xiaomi_bengal --single-branch -b 11.0 kernel/xiaomi/juice
+
+# TOOLCHAIN
+git clone --depth=1 https://github.com/GengKapak/GengKapak-clang --single-branch -b 13 prebuilts/clang/host/linux-x86/clang-gengkapak
+
+#HALS
+rm -rf hardware/qcom-caf/sm8250/audio
+rm -rf hardware/qcom-caf/sm8250/display
+rm -rf hardware/qcom-caf/sm8250/media
+git clone --depth=1 https://github.com/sm6115-dev/hardware_qcom-caf_sm8250_audio.git hardware/qcom-caf/sm8250/audio
+git clone --depth=1 https://github.com/sm6115-dev/hardware_qcom-caf_sm8250_display hardware/qcom-caf/sm8250/display
+git clone --depth=1 https://github.com/sm6115-dev/hardware_qcom-caf_sm8250_media hardware/qcom-caf/sm8250/media
+
+cd /tmp/rom
+export CCACHE_DIR=$HOME/ccache
+export CCACHE_EXEC=$(which ccache)
+export USE_CCACHE=1
+ccache -M 20G
+ccache -o compression=true
+ccache -z

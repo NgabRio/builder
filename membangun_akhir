@@ -1,0 +1,6 @@
+#!/bin/bash
+
+cd /tmp/rom
+. build/envsetup.sh
+lunch nad_juice-userdebug
+mka nad -j8
