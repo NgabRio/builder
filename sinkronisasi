@@ -6,10 +6,7 @@ repo init -q --no-repo-verify --depth=1 -u https://github.com/NusantaraProject-R
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # DT/VT/KT
-git clone https://github.com/MiBengal-Development/Device_xiaomi_J --single-branch -b Trying device/xiaomi/juice
-cd /tmp/rom/device/xiaomi/juice
-git revert HEAD^
-cd /tmp/rom
+git clone https://github.com/MiBengal-Development/Device_xiaomi_J -b Trying device/xiaomi/juice
 git clone --depth=1 https://github.com/I-n-o-k/vendor_xiaomi_juice --single-branch -b 11 vendor/xiaomi/juice
 git clone --depth=1 https://github.com/I-n-o-k/android_kernel_xiaomi_bengal --single-branch -b 11.0 kernel/xiaomi/juice
 
