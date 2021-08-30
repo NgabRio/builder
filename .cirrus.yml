@@ -9,8 +9,6 @@ task:
       cpu: 8
       memory: 32G      
 
-    mengdownload_script:
-      - bash mengdownload
     mengsinkronisasi_script:
       - ./sinkronisasi
     membuat_akhir_script:
