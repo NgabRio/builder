@@ -1,17 +1,21 @@
-env:
+env: 
+    CIRRUS_CLONE_DEPTH: 1
+    CIRRUS_WORKING_DIR: "/tmp/ci" 
+
     rclone_config: "ENCRYPTED[fb2a09ad0b21f52faf35d6861c34c40311f9a48ed369ae5dd82a2ccfeb8bd5b74bc3b0dbf4d0a8f34c8cb1b511c4b68a]"
-
+    
 task:
-    name: cirrus
-    timeout_in: 120m
+    name: abogoboga
+    timeout_in: 120m # Otherwise it will timeout at 60m automatically, 120m highest in free account
     container:
-      image: inok2341/anu:latest
-      cpu: 8
-      memory: 32G      
-
-    mengsinkronisasi_script:
-      - ./sinkronisasi
-    membuat_akhir_script:
-      - bash membuat_akhir
+      dockerfile: Dockerfile # It has built-in setup environment + repo, aria2, rclone, pigz, username ci, and email ci@ci.ci 
+      cpu: 8 
+      memory: 32G 
+    download_ccache_background_script: 
+     - ./mengdownload
+    sync_script: 
+      - ./sinkronisasi 
+    build_uploads_script: 
+      - ./membuat_akhir 
     mengunggah_script:
       - ./mengunggah
