@@ -1,9 +1,0 @@
-#!/bin/bash
-
-cd /tmp/rom
-. build/envsetup.sh
-lunch nad_juice-userdebug
-mka nad -j8 &
-sleep 90m
-kill %1
-ccache -s

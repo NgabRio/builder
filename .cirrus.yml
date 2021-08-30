@@ -1,42 +1,19 @@
 env:
-    token_telegram: "ENCRYPTED[ef57f747d32c7145cad73cba52ab20330068ae5dcc6510a4c762bbbbac14881a135bda5689f4dbe75a30c39c18a3b8a4]"
-    id_telegram: "ENCRYPTED[6f7afb813a6757a3ff95e1a90557ae57b3aed00a6af9860d7616c94c3bf2b390dedc23c8075bcc4adb14b8f1933ce49c]"
-    rclone_config: "ENCRYPTED[81f2ea42a1bb72f5514f01604e25bb9057eb0b6f1b0f5a18434dd7175df07619a880e75ecb9597e10e69fba44553fe84]"
+    rclone_config: "ENCRYPTED[fb2a09ad0b21f52faf35d6861c34c40311f9a48ed369ae5dd82a2ccfeb8bd5b74bc3b0dbf4d0a8f34c8cb1b511c4b68a]"
 
 task:
-    name: nusantara
+    name: cirrus
     timeout_in: 120m
     container:
       image: inok2341/anu:latest
       cpu: 8
       memory: 32G      
 
-    mengunduh_ccache_background_script:
-      - mkdir -p ~/.config/rclone
-      - echo "$rclone_config" > ~/.config/rclone/rclone.conf
-      - df -h && free -h && nproc && cat /etc/os* && env
-      - mkdir -p /tmp/ccache
-      - rclone copy inok:nusantara/ccache.tar.gz /tmp -P
-      - cd /tmp
-      - time tar xf ccache.tar.gz
-      - ls /tmp
-      - ls /tmp/ccache
-      - rm -rf ccache.tar.gz
-      - mkdir -p /tmp/rom
-      - cd /tmp/rom
-      - export CCACHE_DIR=/tmp/ccache
-      - export CCACHE_EXEC=$(which ccache)
-      - export USE_CCACHE=1
-      - ccache -M 20G
-      - ccache -o compression=true
-      - ccache -z
-    memantau_background_script:
-      - ./memantau
+    mengdownload_script:
+      - bash mengdownload
     mengsinkronisasi_script:
       - ./sinkronisasi
-    mengumpulkan_ccache_script:
-      - ./mengumpulkan_ccache
-#    membangun_akhir_script:
-      - ./membangun_akhir
+    membuat_akhir_script:
+      - bash membuat_akhir
     mengunggah_script:
       - ./mengunggah
