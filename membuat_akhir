@@ -1,28 +1,29 @@
 #!/bin/bash
 cd /tmp/rom
 source build/envsetup.sh
-lunch aosp_merlin-userdebug
-export SKIP_API_CHECKS=true
-export SKIP_ABI_CHECKS=true
+lunch wave_merlin-userdebug
 export CCACHE_DIR=/tmp/ccache
 export CCACHE_EXEC=$(which ccache)
 export USE_CCACHE=1
+export SKIP_API_CHECKS=true
+export SKIP_ABI_CHECKS=true
+export TZ=UTC
 
 ccache -M 50G
 ccache -o compression=true
 ccache -z
 
-up(){
-	mkdir -p ~/.config/rclone
-	echo "$rclone_config" > ~/.config/rclone/rclone.conf
-	time rclone copy $1 drive:/ccache/ -P
-}
-
 make_rom(){
-	m aex -j$(nproc --all) 
+  	brunch merlin
 	zip=$(up out/target/product/merlin/*zip)
 	echo " "
 	echo "$zip"
+}
+
+up(){
+        mkdir -p ~/.config/rclone
+        echo "$rclone_config" > ~/.config/rclone/rclone.conf
+        time rclone copy $1 drive:/ccache/ -P   
 }
 
 make_rom &
