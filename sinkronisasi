@@ -21,10 +21,3 @@ git clone --depth=1 https://github.com/sm6115-dev/hardware_qcom-caf_sm8250_audio
 git clone --depth=1 https://github.com/sm6115-dev/hardware_qcom-caf_sm8250_display hardware/qcom-caf/sm8250/display
 git clone --depth=1 https://github.com/sm6115-dev/hardware_qcom-caf_sm8250_media hardware/qcom-caf/sm8250/media
 
-cd /tmp/rom
-export CCACHE_DIR=$HOME/ccache
-export CCACHE_EXEC=$(which ccache)
-export USE_CCACHE=1
-ccache -M 20G
-ccache -o compression=true
-ccache -z
