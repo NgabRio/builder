@@ -6,12 +6,12 @@ nproc
 cat /etc/os*
 env
 
-url=https://mirrorbot.fourninesixx.workers.dev/0:/ccache/ccache.tar.gz 
+url=https://mirrorbot.fourninesixx.workers.dev/0:/ccache/lts.ccache.tar.gz 
 
 cd /tmp 
 time aria2c $url -x16 -s50 
-time tar xf ccache.tar.gz  
-rm -rf ccache.tar.gz
+time tar xf lts.ccache.tar.gz  
+rm -rf lts.ccache.tar.gz
 
 export CCACHE_DIR=/tmp/ccache
 sleep 2m 

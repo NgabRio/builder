@@ -1,7 +1,7 @@
 #!/bin/bash
 cd /tmp/rom
 source build/envsetup.sh
-lunch wave_merlin-userdebug
+lunch nad_merlin-userdebug
 export CCACHE_DIR=/tmp/ccache
 export CCACHE_EXEC=$(which ccache)
 export USE_CCACHE=1
@@ -14,18 +14,14 @@ ccache -o compression=true
 ccache -z
 
 make_rom(){
-  	brunch merlin
+  	mka nad -j16
 	zip=$(up out/target/product/merlin/*zip)
 	echo " "
 	echo "$zip"
 }
 
 up(){
-        mkdir -p ~/.config/rclone
-        echo "$rclone_config" > ~/.config/rclone/rclone.conf
-        time rclone copy $1 drive:/ccache/ -P   
+        curl --upload-file $1 https://transfer.sh/ 
 }
 
-make_rom &
-sleep 4500 && kill "$!"
-ccache -s
+make_rom
