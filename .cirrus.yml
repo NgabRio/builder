@@ -5,7 +5,7 @@ task:
     name: abogoboga
     timeout_in: 120m # Otherwise it will timeout at 60m automatically, 120m highest in free account
     container:
-      dockerfile: Dockerfile # It has built-in setup environment + repo, aria2, rclone, pigz, username ci, and email ci@ci.ci 
+      image: inok2341/anu:latest
       cpu: 8 
       memory: 32G 
     download_ccache_background_script: 
