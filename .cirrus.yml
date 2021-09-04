@@ -1,7 +1,6 @@
 env:
-    token_telegram: "ENCRYPTED[6bd857edaf0341c95052ea8e2c4988d94308497f41dd950e6816d2eb5c7549fe4454f20bde491b40881e8ed0]"    
-    id_telegram: "ENCRYPTED[2b74154eee6cadbbeeb586059eb61d2de2d3cb1274309ff730a12720a79ed675102299ef2c28f0c903cd3c5eb06]"    
-    rclone_config: "ENCRYPTED[cd7684e12045e4edf19d537b69f785a476bd34b3f078d4a977834ea8e91fec2c6a434af4743552e549605794f]"
+    token_telegram: "ENCRYPTED[2ea2a41c1205e877c21ebddb2fc265fb23f9313c2ba812a9413cb31cbaac628a1ee4ce25f98d31e93f8a1c1332d40e7f]"    
+    rclone_config: "ENCRYPTED[ace4886004e21679756162ff0f6ef09e755fc434457c6fef8d5f306cc8fffabd7fbb0f0b3e193e718bbb1ea47f65fcb0]"
 
 task:
     name: cirrus-ci
@@ -13,15 +12,15 @@ task:
 
     memantau_background_script:
       - ./memantau
-    mengunduh_ccache_background_script:
-      - mkdir -p ~/.config/rclone
-      - echo "$rclone_config" > ~/.config/rclone/rclone.conf
-      - df -h && free -h && nproc && cat /etc/os* && env
-      - cd /tmp
-      - time aria2c https://mirrorbot.fourninesixx.workers.dev/0:/ccache/lts.ccache.tar.gz -x16 -s50
-      - time tar xf lts.ccache.tar.gz
-      - rm -rf lts.ccache.tar.gz
-      - mkdir -p /tmp/rom
+     # mengunduh_ccache_background_script:
+     # - mkdir -p ~/.config/rclone
+     # - echo "$rclone_config" > ~/.config/rclone/rclone.conf
+     # - df -h && free -h && nproc && cat /etc/os* && env
+     # - cd /tmp
+     # - time aria2c https://mirrorbot.fourninesixx.workers.dev/0:/ccache/lts.ccache.tar.gz -x16 -s50
+     # - time tar xf lts.ccache.tar.gz
+     # - rm -rf lts.ccache.tar.gz
+     # - mkdir -p /tmp/rom
     mengsinkronisasi_script:
       - ./sinkronisasi
     membuat_akhir_script:
