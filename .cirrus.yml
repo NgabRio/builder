@@ -1,5 +1,4 @@
 env:
-    token_telegram: "ENCRYPTED[2ea2a41c1205e877c21ebddb2fc265fb23f9313c2ba812a9413cb31cbaac628a1ee4ce25f98d31e93f8a1c1332d40e7f]"    
     rclone_config: "ENCRYPTED[ace4886004e21679756162ff0f6ef09e755fc434457c6fef8d5f306cc8fffabd7fbb0f0b3e193e718bbb1ea47f65fcb0]"
 
 task:
