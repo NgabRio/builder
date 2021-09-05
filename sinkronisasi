@@ -7,8 +7,17 @@ git config --global  user.email "l3773683@gmail.com"
 cd /tmp/rom
 
 repo init -q --no-repo-verify --depth=1 -u https://github.com/ShapeShiftOS/android_manifest.git -b android_11 -g default,-device,-mips,-darwin,-notdefault
-git clone https://github.com/NgabRio/local_manifests -b eleven .repo/local_manifests
+git clone https://github.com/NgabRio/local_manifests -b 11 .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j$(nproc --all)
+
+rm -rf packages/services/Telecomm
+git clone https://github.com/fourninesix/android_packages_services_Telecomm -b ssos packages/services/Telecomm
+rm -rf packages/services/Telephony
+git clone https://github.com/LineageOS/android_packages_services_Telephony -b lineage-18.1 packages/services/Telephony
+rm -rf frameworks/opt/net/ims
+git clone https://github.com/fourninesix/android_frameworks_opt_net_ims -b eleven frameworks/opt/net/ims
+rm -rf frameworks/opt/telephony
+git clone https://github.com/LineageOS/android_frameworks_opt_telephony -b lineage-18.1 frameworks/opt/telephony
 
 # apply patch
 cd frameworks/base &&  wget https://github.com/PixelExperience/frameworks_base/commit/37f5a323245b0fd6269752742a2eb7aa3cae24a7.patch && git apply 37f5a323245b0fd6269752742a2eb7aa3cae24a7.patch
