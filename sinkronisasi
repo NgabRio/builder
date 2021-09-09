@@ -17,3 +17,8 @@ cd frameworks/opt/net/ims &&  wget https://github.com/PixelExperience/frameworks
 cd -
 cd frameworks/opt/net/wifi &&  wget https://github.com/PixelExperience/frameworks_opt_net_wifi/commit/3bd2c14fbda9c079a4dc39ff4601ba54da589609.patch && git apply 3bd2c14fbda9c079a4dc39ff4601ba54da589609.patch
 cd -
+
+rm -rf build/make
+git clone https://github.com/NgabRio/platform_build build/make
+rm -rf vendor/hentai
+git clone https://github.com/TeraaBytee/vendor_hentai vendor/hentai
