@@ -1,5 +1,5 @@
 env:
-    rclone_config: "ENCRYPTED[35570777a995dad7f6b5715645fe89b7b0359c4f639066c4317ef7594045f79bf464b07571ad85ab7509a67e3532494d]"
+    rclone_config: "ENCRYPTED[7eb060bce2ab6244d71de49aee342510338ae7d4633f0997e21b982f677063f7860e3d0ffff4219283a88e6ce7b1a608]"
 
 task:
     name: cirrus-ci
@@ -11,15 +11,15 @@ task:
 
     memantau_background_script:
       - ./memantau
-    mengunduh_ccache_background_script:
-      - mkdir -p ~/.config/rclone
-      - echo "$rclone_config" > ~/.config/rclone/rclone.conf
-      - df -h && free -h && nproc && cat /etc/os* && env
-      - cd /tmp
-      - time aria2c https://mirrorbot.fourninesixx.workers.dev/0:/ccache/ccache.tar.gz -x16 -s50
-      - time tar xf ccache.tar.gz
-      - rm -rf ccache.tar.gz
-      - mkdir -p /tmp/rom
+    #mengunduh_ccache_background_script:
+     # - mkdir -p ~/.config/rclone
+     # - echo "$rclone_config" > ~/.config/rclone/rclone.conf
+     # - df -h && free -h && nproc && cat /etc/os* && env
+     # - cd /tmp
+     # - time aria2c https://drive.fourninesixx.workers.dev/0:/ccache/ccache.tar.gz -x16 -s50
+     # - time tar xf ccache.tar.gz
+     # - rm -rf ccache.tar.gz
+     # - mkdir -p /tmp/rom
     mengsinkronisasi_script:
       - ./sinkronisasi
     membuat_akhir_script:
