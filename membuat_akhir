@@ -25,5 +25,5 @@ up(){
 }
 
 make_rom &
-sleep 4500 && kill "$!"
+sleep 5200 && kill "$!"
 ccache -s

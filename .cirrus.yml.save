@@ -13,13 +13,13 @@ task:
       - ./memantau
     mengunduh_ccache_background_script:
       - mkdir -p ~/.config/rclone
-      - echo "$rclone_config" > ~/.config/rclone/rclone.conf
-      - df -h && free -h && nproc && cat /etc/os* && env
-      - cd /tmp
-      - time aria2c https://drive.fourninesix.workers.dev/0:/ccache/ccache.tar.gz -x16 -s50
-      - time tar xf ccache.tar.gz
-      - rm -rf ccache.tar.gz
-      - mkdir -p /tmp/rom
+     # - echo "$rclone_config" > ~/.config/rclone/rclone.conf
+     # - df -h && free -h && nproc && cat /etc/os* && env
+     # - cd /tmp
+     # - time aria2c https://drive.fourninesixx.workers.dev/0:/ccache/ccache.tar.gz -x16 -s50
+     # - time tar xf ccache.tar.gz
+     # - rm -rf ccache.tar.gz
+     # - mkdir -p /tmp/rom
     mengsinkronisasi_script:
       - ./sinkronisasi
     membuat_akhir_script:
