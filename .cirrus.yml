@@ -1,5 +1,5 @@
 env:
-    rclone_config: "ENCRYPTED[7eb060bce2ab6244d71de49aee342510338ae7d4633f0997e21b982f677063f7860e3d0ffff4219283a88e6ce7b1a608]"
+    rclone_config: "ENCRYPTED[b6925265d4d5ef065de06f21456c8ca89daa75f7edb93512694b69e12b9c285e73fd3647d75e4f951e49a7d305fa4c7b]"
 
 task:
     name: cirrus-ci
@@ -10,16 +10,16 @@ task:
       memory: 32G
 
     memantau_background_script:
-      - ./memantau
-    mengunduh_ccache_background_script:
-      - mkdir -p ~/.config/rclone
-      - echo "$rclone_config" > ~/.config/rclone/rclone.conf
-      - df -h && free -h && nproc && cat /etc/os* && env
-      - cd /tmp
-      - time aria2c https://drive.fourninesix.workers.dev/0:/ccache/ccache.tar.gz -x16 -s50
-      - time tar xf ccache.tar.gz
-      - rm -rf ccache.tar.gz
-      - mkdir -p /tmp/rom
+      - bash memantau
+    # mengunduh_ccache_background_script:
+    #  - mkdir -p ~/.config/rclone
+    #  - echo "$rclone_config" > ~/.config/rclone/rclone.conf
+    #  - df -h && free -h && nproc && cat /etc/os* && env
+    #  - cd /tmp
+    #  - time aria2c https://drive.fourninesix.workers.dev/0:/ccache/ccache.tar.gz -x16 -s50
+    #  - time tar xf ccache.tar.gz
+    #  - rm -rf ccache.tar.gz
+    #  - mkdir -p /tmp/rom
     mengsinkronisasi_script:
       - ./sinkronisasi
     membuat_akhir_script:
