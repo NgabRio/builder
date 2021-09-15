@@ -7,7 +7,7 @@ git config --global  user.email "l3773683@gmail.com"
 cd /tmp/rom
 
 repo init -q --no-repo-verify --depth=1 -u https://github.com/hentaiOS/platform_manifest -b Rika -g default,-device,-mips,-darwin,-notdefault
-git clone https://github.com/NgabRio/local_manifests -b 11 .repo/local_manifests
+git clone https://github.com/linear21/local_manifests -b hentai .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j$(nproc --all)
 
 # apply patch
@@ -20,7 +20,3 @@ cd -
 
 rm -rf build/make
 git clone https://github.com/linear21/platform_build build/make
-rm -rf device/xiaomi/merlinx
-git clone https://github.com/linear21/android_device_xiaomi_merlin -b hentai device/xiaomi/merlin
-rm -rf vendor/xiaomi/merlinx
-git clone https://github.com/Redmi-MT6768/android_vendor_xiaomi_merlin -b eleven vendor/xiaomi/merlin
