@@ -20,3 +20,7 @@ cd -
 
 rm -rf build/make
 git clone https://github.com/linear21/platform_build build/make
+rm -rf device/xiaomi/merlinx
+git clone https://github.com/linear21/android_device_xiaomi_merlin -b hentai device/xiaomi/merlin
+rm -rf vendor/xiaomi/merlinx
+git clone https://github.com/Redmi-MT6768/android_vendor_xiaomi_merlin -b eleven vendor/xiaomi/merlin
