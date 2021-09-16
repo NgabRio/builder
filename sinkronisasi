@@ -11,7 +11,7 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 
 # clone tree
 git clone https://github.com/fourninesix/device_xiaomi_mt6768-common -b eleven device/xiaomi/mt6768-common --depth=1
-git clone https://github.com/fourninesix/android_device_xiaomi_merlinx -b eleven device/xiaomi/merlinx --depth=1
+git clone https://github.com/fourninesix/android_device_xiaomi_merlinx -b sakura device/xiaomi/merlinx --depth=1
 git clone https://github.com/Redmi-MT6768/android_vendor_xiaomi_merlinx -b eleven vendor/xiaomi/merlinx  --depth=1
 git clone https://github.com/Redmi-MT6768/android_kernel_xiaomi_mt6768 -b eleven kernel/xiaomi/mt6768 --depth=1
 git clone https://github.com/PixelExperience/device_mediatek_sepolicy_vndr -b eleven device/mediatek/sepolicy_vndr --depth=1

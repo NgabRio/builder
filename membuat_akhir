@@ -24,6 +24,4 @@ up(){
         curl --upload-file $1 https://transfer.sh/ 
 }
 
-make_rom &
-sleep 5200 && kill "$!"
-ccache -s
+make_rom
