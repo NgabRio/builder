@@ -20,7 +20,7 @@ git clone https://github.com/PixelExperience/vendor_mediatek_interfaces -b eleve
 rm -rf packages/services/Telecomm
 git clone https://github.com/linear21/android_packages_services_Telecomm -b eleven packages/services/Telecomm
 rm -rf packages/services/Telephony
-git clone https://github.com/linear21/android_packages_services_Telephony -b lineage-18.1 packages/services/Telephony
+git clone https://github.com/linear21/android_packages_services_Telephony -b eleven packages/services/Telephony
 rm -rf frameworks/opt/telephony
 git clone https://github.com/LineageOS/android_frameworks_opt_telephony -b lineage-18.1 frameworks/opt/telephony
 rm -rf frameworks/opt/net/ims
