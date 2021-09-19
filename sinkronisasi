@@ -24,7 +24,7 @@ git clone https://github.com/linear21/android_packages_services_Telephony -b ele
 rm -rf frameworks/opt/telephony
 git clone https://github.com/LineageOS/android_frameworks_opt_telephony -b lineage-18.1 frameworks/opt/telephony
 rm -rf frameworks/opt/net/ims
-git clone https://github.com/PixelExperience/frameworks_opt_net_ims -b eleven frameworks/opt/net/ims
+git clone https://github.com/fourninesix/android_frameworks_opt_net_ims -b eleven frameworks/opt/net/ims
 
 
 # apply patch
