@@ -6,26 +6,16 @@ git config --global  user.name "l3773"
 git config --global  user.email "l3773683@gmail.com"
 cd /tmp/rom
 
-repo init -q --no-repo-verify --depth=1 https://github.com/bananadroid/android_manifest.git -b 11 -g default,-device,-mips,-darwin,-notdefault
+repo init -q --no-repo-verify --depth=1 https://github.com/Spark-Rom/manifest -b fire -g default,-device,-mips,-darwin,-notdefault
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j$(nproc --all)
 
 # clone tree
 git clone https://github.com/fourninesix/device_xiaomi_mt6768-common -b eleven device/xiaomi/mt6768-common --depth=1
-git clone https://github.com/fourninesix/android_device_xiaomi_merlinx -b banana device/xiaomi/merlinx --depth=1
+git clone https://github.com/fourninesix/android_device_xiaomi_merlinx -b spark device/xiaomi/merlinx --depth=1
 git clone https://github.com/Redmi-MT6768/android_vendor_xiaomi_merlinx -b eleven vendor/xiaomi/merlinx  --depth=1
 git clone https://github.com/Redmi-MT6768/android_kernel_xiaomi_mt6768 -b eleven kernel/xiaomi/mt6768 --depth=1
 git clone https://github.com/PixelExperience/device_mediatek_sepolicy_vndr -b eleven device/mediatek/sepolicy_vndr --depth=1
 git clone https://github.com/PixelExperience/vendor_mediatek_interfaces -b eleven vendor/mediatek/interfaces
-
-rm -rf packages/services/Telecomm
-git clone https://github.com/linear21/android_packages_services_Telecomm -b eleven packages/services/Telecomm
-rm -rf packages/services/Telephony
-git clone https://github.com/linear21/android_packages_services_Telephony -b eleven packages/services/Telephony
-rm -rf frameworks/opt/telephony
-git clone https://github.com/LineageOS/android_frameworks_opt_telephony -b lineage-18.1 frameworks/opt/telephony
-rm -rf frameworks/opt/net/ims
-git clone https://github.com/fourninesix/android_frameworks_opt_net_ims -b eleven frameworks/opt/net/ims
-
 
 # apply patch
 cd frameworks/base &&  wget https://github.com/PixelExperience/frameworks_base/commit/37f5a323245b0fd6269752742a2eb7aa3cae24a7.patch && git apply 37f5a323245b0fd6269752742a2eb7aa3cae24a7.patch
