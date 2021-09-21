@@ -1,5 +1,5 @@
 env:
-    rclone_config: "ENCRYPTED[b6925265d4d5ef065de06f21456c8ca89daa75f7edb93512694b69e12b9c285e73fd3647d75e4f951e49a7d305fa4c7b]"
+    rclone_config: "ENCRYPTED[3a193ee76fd13e3e3ef69ee000f0f7b8e55e753707fe469e312248fc4464cfd7b443a0c8480029c3accf1c63b64a38a2]"
 
 task:
     name: cirrus-ci
