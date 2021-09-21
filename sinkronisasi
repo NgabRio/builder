@@ -28,4 +28,5 @@ cd -
 rm -rf build/make
 git clone https://github.com/linear21/platform_build build/make
 rm -rf vendor/hentai
-git clone https://github.com/TeraaBytee/vendor_hentais
+git clone https://github.com/TeraaBytee/vendor_hentai vendor/hentai
+rm -rf device/generic/opengl-transport
