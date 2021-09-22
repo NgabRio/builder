@@ -1,7 +1,6 @@
 #!/bin/bash
 
-sudo apt install wget
-sudo apt install python2 -y
+sudo apt update && sudo apt upgrade -y
 git config --global  user.name "l3773"
 git config --global  user.email "l3773683@gmail.com"
 cd /tmp/rom
