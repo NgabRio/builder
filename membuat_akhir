@@ -1,7 +1,7 @@
 #!/bin/bash
 cd /tmp/rom
 source build/envsetup.sh
-lunch revengeos_merlinx-user
+lunch komodo_merlinx-user
 export CCACHE_DIR=/tmp/ccache
 export CCACHE_EXEC=$(which ccache)
 export USE_CCACHE=1
@@ -14,7 +14,7 @@ ccache -o compression=true
 ccache -z
 
 make_rom(){
-    make bacon
+    masak komodo -j32
 	zip=$(up out/target/product/merlinx/*zip)
 	echo " "
 	echo "$zip"
