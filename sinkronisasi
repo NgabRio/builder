@@ -13,7 +13,7 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 git clone https://github.com/linear21/android_device_xiaomi_merlin -b havoc device/xiaomi/merlin --depth=1
 git clone https://github.com/Redmi-MT6768/android_vendor_xiaomi_merlin -b ten vendor/xiaomi/merlin  --depth=1
 git clone https://github.com/fourninesix/based_kernel -b eleven-q kernel/xiaomi/mt6768 --depth=1
-git clone https://github.com/PixelExperience/vendor_mediatek_interfaces -b eleven vendor/mediatek/interfaces
+git clone https://github.com/PixelExperience/vendor_mediatek-opensource -b ten vendor/mediatek/opensource
 
 rm -rf packages/services/Telecomm
 git clone https://github.com/fourninesix/android_packages_services_Telecomm -b lineage-17.1 packages/services/Telecomm

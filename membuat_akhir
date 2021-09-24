@@ -14,7 +14,7 @@ ccache -o compression=true
 ccache -z
 
 make_rom(){
-    brunch
+    brunch havoc_merlin-userdebug
 	zip=$(up out/target/product/merlin/*zip)
 	echo " "
 	echo "$zip"
