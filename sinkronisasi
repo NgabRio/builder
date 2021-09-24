@@ -10,7 +10,7 @@ repo init -q --no-repo-verify --depth=1 https://github.com/Havoc-OS/android_mani
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j$(nproc --all)
 
 # clone tree
-git clone https://github.com/linear21/android_device_xiaomi_merlin -b havoc device/xiaomi/merlin --depth=1
+git clone https://github.com/fourninesix/android_device_xiaomi_merlin -b havoc device/xiaomi/merlin --depth=1
 git clone https://github.com/Redmi-MT6768/android_vendor_xiaomi_merlin -b ten vendor/xiaomi/merlin  --depth=1
 git clone https://github.com/fourninesix/based_kernel -b eleven-q kernel/xiaomi/mt6768 --depth=1
 git clone https://github.com/PixelExperience/vendor_mediatek-opensource -b ten vendor/mediatek/opensource
@@ -20,7 +20,7 @@ git clone https://github.com/fourninesix/android_packages_services_Telecomm -b l
 rm -rf packages/services/Telephony
 git clone https://github.com/fourninesix/android_packages_services_Telephony -b havoc packages/services/Telephony
 rm -rf frameworks/opt/telephony
-git clone https://github.com/LineageOS/android_frameworks_opt_telephony -b lineage-17.1 frameworks/opt/telephony
+git clone https://github.com/fourninesix/android_frameworks_opt_telephony -b lineage-17.1 frameworks/opt/telephony
 rm -rf frameworks/opt/net/ims
 git clone https://github.com/fourninesix/android_frameworks_opt_net_ims -b 10 frameworks/opt/net/ims
 
