@@ -8,6 +8,7 @@ export USE_CCACHE=1
 export SKIP_API_CHECKS=true
 export SKIP_ABI_CHECKS=true
 export TZ=UTC
+export WITH_GAPPS=true
 
 ccache -M 50G
 ccache -o compression=true
