@@ -1,8 +1,8 @@
 #!/bin/bash
 
 cd /tmp/rom
-source build/envsetup.sh
-lunch octavi_garden-userdebug
+. build/envsetup.sh
+lunch lineage_merlinx-userdebug
 export CCACHE_DIR=/tmp/ccache
 export CCACHE_EXEC=$(which ccache)
 export USE_CCACHE=1
@@ -14,8 +14,8 @@ ccache -o compression=true
 ccache -z
 
 make(){
-    brunch octavi_garden-userdebug
-	zip=$(upload out/target/product/garden/*zip)
+    mka bacon
+	zip=$(upload out/target/product/merlinx/*zip)
 	echo " "
 	echo "$zip"
 }
