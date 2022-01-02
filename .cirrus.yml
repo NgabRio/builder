@@ -35,11 +35,11 @@ task:
       - cd /tmp/rom
       - repo init -q --no-repo-verify --depth=1 -u git://github.com/LineageOS/android.git -g default,-device,-mips,-darwin,-notdefault
       - repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
-      - git clone https://github.com/Redmi-MT6768/android_device_xiaomi_mt6768-common -b lineage-19.0 device/xiaomi/mt6768-common
-      - git clone https://github.com/Redmi-MT6768/android_device_xiaomi_merlinx -b lineage-19.0 device/xiaomi/merlinx
-      - git clone https://github.com/Redmi-MT6768/android_kernel_xiaomi_mt6768 -b twelve kernel/xiaomi/mt6768
-      - git clone https://github.com/Redmi-MT6768/android_vendor_xiaomi_merlinx -b lineage-19.0 vendor/xiaomi/merlinx
-      - git clone https://github.com/Redmi-MT6768/android_vendor_xiaomi_mt6768-ims -b twelve vendor/xiaomi/mt6768-ims
+      - git clone https://github.com/Redmi-MT6768/android_device_xiaomi_mt6768-common -b lineage-19.0 device/xiaomi/mt6768-common --depth=1
+      - git clone https://github.com/Redmi-MT6768/android_device_xiaomi_merlinx -b lineage-19.0 device/xiaomi/merlinx --depth=1
+      - git clone https://github.com/Redmi-MT6768/android_kernel_xiaomi_mt6768 -b twelve kernel/xiaomi/mt6768 --depth=1
+      - git clone https://github.com/Redmi-MT6768/android_vendor_xiaomi_merlinx -b twelve vendor/xiaomi/merlinx --depth=1
+      - git clone https://github.com/Redmi-MT6768/android_vendor_xiaomi_mt6768-ims -b twelve vendor/xiaomi/mt6768-ims --depth=1
 
   Build_script:
       - ./final.sh
