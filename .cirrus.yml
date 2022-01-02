@@ -40,6 +40,7 @@ task:
       - git clone https://github.com/Redmi-MT6768/android_kernel_xiaomi_mt6768 -b twelve kernel/xiaomi/mt6768 --depth=1
       - git clone https://github.com/Redmi-MT6768/android_vendor_xiaomi_merlinx -b twelve vendor/xiaomi/merlinx --depth=1
       - git clone https://github.com/Redmi-MT6768/android_vendor_xiaomi_mt6768-ims -b twelve vendor/xiaomi/mt6768-ims --depth=1
+      - git clone https://github.com/PixelExperience/device_mediatek_sepolicy_vndr -b twelve device/mediatek/sepolicy_vndr
 
   Build_script:
       - ./final.sh
